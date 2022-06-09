@@ -32,23 +32,18 @@ function FormTodo({ addTodo }) {
   return (
     <Form onSubmit={handleSubmit}> 
     <Form.Group>
-      <Form.Label><b>Add Todo</b></Form.Label>
-      <Form.Control type="text" className="input" value={value} onChange={e => setValue(e.target.value)} placeholder="Add new todo" />
+      <Form.Label><b>Lisa ülesanne</b></Form.Label>
+      <Form.Control type="text" className="input" value={value} onChange={e => setValue(e.target.value)} placeholder="Lisa uus ülesanne siia"/>
     </Form.Group>
-    <Button variant="primary mb-3" type="submit">
-      Submit
+    <Button variant="primary mb-3" type="kinnita🇺🇦">
+      Kinnita
     </Button>
-  </Form>
+  </Form> 
   );
 }
 
 function App() {
-  const [todos, setTodos] = React.useState([
-    {
-      text: "This is a sampe todo",
-      isDone: false
-    }
-  ]);
+  const [todos, setTodos] = React.useState([]);
 
   const addTodo = text => {
     const newTodos = [...todos, { text }];
@@ -70,7 +65,7 @@ function App() {
   return (
     <div className="app">
       <div className="container">
-        <h1 className="text-center mb-4">Todo List</h1>
+        <h1 className="text-center mb-4">Ülesannete list</h1>
         <FormTodo addTodo={addTodo} />
         <div>
           {todos.map((todo, index) => (
